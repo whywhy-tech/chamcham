@@ -1,0 +1,25 @@
+{
+  "name": "chameleon-hunt",
+  "version": "1.0.0",
+  "description": "Original multiplayer hide-and-paint game prototype using Three.js and Socket.IO.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "threejs",
+    "socket.io",
+    "multiplayer",
+    "game"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

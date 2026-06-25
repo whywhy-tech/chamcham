@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chameleon Hunt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="menu" class="panel center-panel">
+    <h1>Chameleon Hunt</h1>
+    <p class="muted">Paint yourself. Blend into the arena. Avoid the hunter's tag blaster.</p>
+
+    <label>
+      Player name
+      <input id="nameInput" maxlength="16" placeholder="Player" />
+    </label>
+
+    <div class="row">
+      <button id="createBtn">Create Room</button>
+      <input id="codeInput" maxlength="4" placeholder="CODE" />
+      <button id="joinBtn">Join</button>
+    </div>
+
+    <p id="menuError" class="error"></p>
+  </div>
+
+  <div id="hud" class="panel hud hidden">
+    <div class="top-row">
+      <div>
+        <strong>Room:</strong> <span id="roomCode">----</span>
+        <button id="copyBtn" class="mini">Copy</button>
+      </div>
+      <div><strong>Role:</strong> <span id="roleText">Lobby</span></div>
+      <div><strong>Timer:</strong> <span id="timerText">--</span></div>
+    </div>
+
+    <div id="hiderTools" class="tools hidden">
+      <label class="color-label">Paint
+        <input id="paintPicker" type="color" value="#4ade80" />
+      </label>
+      <button id="paintBtn">Paint Self</button>
+      <button id="sampleBtn">Sample Nearby Surface</button>
+      <span class="hint">E = sample, F = freeze, Shift = crouch</span>
+    </div>
+
+    <div id="hunterTools" class="tools hidden">
+      <span class="hint">Click a visible hider to tag. Limited range + cooldown.</span>
+    </div>
+
+    <div id="hostTools" class="tools hidden">
+      <button id="startBtn">Start Round</button>
+      <button id="resetBtn">Back To Lobby</button>
+    </div>
+
+    <p id="notice" class="notice"></p>
+    <div id="playersList" class="players"></div>
+  </div>
+
+  <div id="crosshair" class="hidden">+</div>
+  <canvas id="gameCanvas"></canvas>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
